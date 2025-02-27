@@ -1,0 +1,21 @@
+Database: marketplace
+
+Tabella: prodotti
+
+Campi:
+Nome Prodotto;
+Descrizione;
+Prezzo Unitario (costo di un singolo prodotto);
+Quantità in Magazzino (numero di unità disponibili in inventario);
+Categoria (tipo di prodotto, ad esempio: elettronica, abbigliamento, ecc.);
+Data di Aggiunta: (data in cui il prodotto è stato inserito nel database).
+
+Dopo, modifica come vengono visualizzati nell'html i singoli prodotti. 
+
+Passaggi da fare:
+1. accedere a http://localhost/phpmyadmin/ e creare la tabella 'marketplace'.
+2. creare la tabella 'prodotti' con i campi suddetti e relativi vincoli.
+3. modificare il form html per dare modo all'utente di inserire tutti i campi di un prodotto.
+4. modificare il javascript affinché ogni prodotto venga mostrato in una card e che mostri solo le seguenti informazioni: nome, prezzo e categoria.
+
+Buon lavoro!
