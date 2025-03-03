@@ -19,3 +19,4 @@ Passaggi da fare:
 4. modificare il javascript affinché ogni prodotto venga mostrato in una card e che mostri solo le seguenti informazioni: nome, prezzo e categoria.
 
 Buon lavoro!
+cisp
