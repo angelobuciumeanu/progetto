@@ -25,20 +25,21 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('api/getProduct.php')
             .then(response => response.json())
             .then(data => {
+                productsList.innerHTML = ''; // Pulisce la lista prima di caricare i prodotti
 
-                //Variabile che apre il tag contenitore dove inserire tutti i record
-                let html = '<ul>';
-
-                //Per ogni prodotto, prende i campi della tabella
-                //${ NOMETABELLA.NOMECAMPO }
                 data.forEach(product => {
-                    html += `<li>${product.nome} - € ${product.prezzo}</li>`;
+                    // Creazione della card per ogni prodotto
+                    let card = document.createElement("div");
+                    card.classList.add("product-card");
+
+                    card.innerHTML = `
+                        <h3>${product.nome}</h3>
+                        <p>Prezzo: €${parseFloat(product.prezzo).toFixed(2)}</p>
+                        <p>Categoria: ${product.categoria}</p>
+                    `;
+
+                    productsList.appendChild(card);
                 });
-
-                //Variabile che chiude il tag contenitore
-                html += '</ul>';
-
-                productsList.innerHTML = html;
             })
             .catch(error => console.error('Errore:', error));
     }
