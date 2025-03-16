@@ -25,16 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('api/getProduct.php')
             .then(response => response.json())
             .then(data => {
-                productsList.innerHTML = ''; // Pulisce la lista prima di caricare i prodotti
+                productsList.innerHTML = '';
 
                 data.forEach(product => {
-                    // Creazione della card per ogni prodotto
                     let card = document.createElement("div");
                     card.classList.add("product-card");
 
                     card.innerHTML = `
                         <h3>${product.nome}</h3>
+                        <p>${product.descrizione}</p>
                         <p>Prezzo: €${parseFloat(product.prezzo).toFixed(2)}</p>
+                        <p>Quantità: ${product.quantita}</p>
                         <p>Categoria: ${product.categoria}</p>
                     `;
 
@@ -44,6 +45,5 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Errore:', error));
     }
 
-    // Carica i prodotti all'avvio
     loadProducts();
 });
